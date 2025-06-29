@@ -1,0 +1,11 @@
+workflows:
+  ios-build:
+    name: Copilot Legacy Build
+    environment:
+      xcode: latest
+    scripts:
+      - name: Build the app
+        script: |
+          xcodebuild -project WebAppWrapper.xcodeproj -scheme WebAppWrapper -configuration Release
+    artifacts:
+      - build/Release-iphoneos/*.app
